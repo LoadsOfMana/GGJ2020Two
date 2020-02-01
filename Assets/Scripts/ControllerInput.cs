@@ -29,7 +29,7 @@ public class ControllerInput : MonoBehaviour
 	//	Squeeze();
 	//	Grab();
 	//	Pinch();
-		Trigger();
+	//	Trigger();
 	//	Skeleton();
 	}
 	
