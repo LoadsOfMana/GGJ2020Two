@@ -2,17 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class plateCollider : MonoBehaviour
+public class plateCollider : PuzzleWithOutcome
 {
 	public enum whichCollider { good, bad1, bad2 }
 	public whichCollider whichCol;
 	public GameObject brokenPrefab;
 	public float breakThreshold = 3;
-
+	private bool broken = false;
 	private void OnTriggerEnter(Collider other)
 	{
-		if (other.gameObject.tag == "Wrench")
+		if (other.gameObject.tag == "Wrench" && !broken)
 		{
+			broken = true;
 			if (other.gameObject.GetComponent<WrenchHead1>().speed > breakThreshold)
 			{
 				Destroy(transform.parent.gameObject); //[WIP] replace with shatter model when made
