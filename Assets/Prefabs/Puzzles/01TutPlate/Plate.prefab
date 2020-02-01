@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 7249551773296177179}
   - component: {fileID: 119282240}
   - component: {fileID: 119282241}
+  - component: {fileID: 257700262}
+  - component: {fileID: 257700263}
   m_Layer: 0
   m_Name: Plate
   m_TagString: Untagged
@@ -127,6 +129,32 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.020000003, y: 0.00044591428, z: 0.005792525}
   m_Center: {x: 9.379212e-10, y: -0.0000823454, z: 0.000026630045}
+--- !u!65 &257700262
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1709813131342717591}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.006141043, y: 0.00044591428, z: 0.020000003}
+  m_Center: {x: -0.0003400752, y: -0.0000823454, z: -0.0000000018758424}
+--- !u!65 &257700263
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1709813131342717591}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.020000003, y: 0.00044591428, z: 0.005792525}
+  m_Center: {x: 9.379212e-10, y: -0.0000823454, z: 0.000026630045}
 --- !u!1 &7249551773144195553
 GameObject:
   m_ObjectHideFlags: 0
@@ -136,8 +164,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7249551773144195558}
-  - component: {fileID: 468037891}
   - component: {fileID: 468037890}
+  - component: {fileID: 1799564130}
+  - component: {fileID: 1799564129}
   m_Layer: 0
   m_Name: GoodColliders
   m_TagString: Untagged
@@ -161,7 +190,23 @@ Transform:
   m_Father: {fileID: 2441267807882432644}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &468037891
+--- !u!114 &468037890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7249551773144195553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 315e569e45b7f1e42b8cee5a77351e22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  whichCol: 0
+  brokenPrefab: {fileID: 8688144082439523646, guid: 76d18d719ae58444983d89bf687fb614,
+    type: 3}
+  breakThreshold: 3
+--- !u!54 &1799564130
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -177,7 +222,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &468037890
+--- !u!114 &1799564129
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -574,8 +619,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7249551773534972006}
-  - component: {fileID: 1024130466}
   - component: {fileID: 1024130465}
+  - component: {fileID: 1184035468}
+  - component: {fileID: 1184035467}
   m_Layer: 0
   m_Name: BadColliderstrav
   m_TagString: Untagged
@@ -603,7 +649,23 @@ Transform:
   m_Father: {fileID: 2441267807882432644}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &1024130466
+--- !u!114 &1024130465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7249551773534972001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 315e569e45b7f1e42b8cee5a77351e22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  whichCol: 1
+  brokenPrefab: {fileID: 8688144082439523646, guid: 76d18d719ae58444983d89bf687fb614,
+    type: 3}
+  breakThreshold: 3
+--- !u!54 &1184035468
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -619,7 +681,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1024130465
+--- !u!114 &1184035467
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -830,8 +892,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7249551774392745475}
-  - component: {fileID: 1010763047}
   - component: {fileID: 1010763046}
+  - component: {fileID: 552252179}
+  - component: {fileID: 552252178}
   m_Layer: 0
   m_Name: BadColliderscage
   m_TagString: Untagged
@@ -857,7 +920,23 @@ Transform:
   m_Father: {fileID: 2441267807882432644}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &1010763047
+--- !u!114 &1010763046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7249551774392745474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 315e569e45b7f1e42b8cee5a77351e22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  whichCol: 2
+  brokenPrefab: {fileID: 8688144082439523646, guid: 76d18d719ae58444983d89bf687fb614,
+    type: 3}
+  breakThreshold: 3
+--- !u!54 &552252179
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -873,7 +952,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1010763046
+--- !u!114 &552252178
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
