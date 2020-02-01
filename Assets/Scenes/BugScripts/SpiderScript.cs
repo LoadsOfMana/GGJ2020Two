@@ -13,7 +13,7 @@ public class SpiderScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        transform.localRotation = Quaternion.Euler(0, Mathf.Sin(Time.time*10)*35, 0);
     }
 
     private void OnTriggerEnter(Collider collider)
