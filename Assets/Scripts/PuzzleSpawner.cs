@@ -16,4 +16,9 @@ public class PuzzleSpawner : MonoBehaviour
 		if (currentPuzzle == puzzles.Length)
 			currentPuzzle = 0;
 	}
+
+	private void Start()
+	{
+		SpawnNext();
+	}
 }

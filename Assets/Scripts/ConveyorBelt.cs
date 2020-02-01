@@ -8,14 +8,15 @@ public class ConveyorBelt : MonoBehaviour
 	public List<Rigidbody> touchingBodies;
 	private void OnCollisionEnter(Collision collision)
 	{
-		Rigidbody otherBody = collision.collider.gameObject.GetComponent<Rigidbody>();
+		Rigidbody otherBody = collision.collider.gameObject.transform.root.GetComponent<Rigidbody>();
 		if (otherBody != null && !touchingBodies.Contains(otherBody))
 			touchingBodies.Add(otherBody);
 	}
 	private void OnCollisionExit(Collision collision)
 	{
-		if (collision.collider.gameObject.GetComponent<Rigidbody>())
-			touchingBodies.Remove(collision.collider.gameObject.GetComponent<Rigidbody>());
+		Rigidbody otherBody = collision.collider.gameObject.transform.root.GetComponent<Rigidbody>();
+		if (otherBody)
+			touchingBodies.Remove(otherBody);
 	}
 	private void Update()
 	{

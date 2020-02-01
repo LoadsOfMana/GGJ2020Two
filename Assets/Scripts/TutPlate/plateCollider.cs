@@ -24,7 +24,10 @@ public class plateCollider : MonoBehaviour
 		if (other.gameObject.tag == "Wrench")
 		{
 			if (other.gameObject.GetComponent<WrenchHead1>().speed > breakThreshold)
+			{
 				Destroy(transform.parent.gameObject); //[WIP] replace with shatter model when made
+				//give no points after turn in
+			}
 			else
 			{
 				GameObject lastSpawn = new GameObject();
@@ -33,13 +36,13 @@ public class plateCollider : MonoBehaviour
 					case whichCollider.bad1:
 						lastSpawn = Instantiate(brokenPrefab, transform.position, transform.rotation);
 						Destroy(lastSpawn.transform.Find("TravSide").gameObject); //[WIP] replace with shatter model when made
-																	   //give half points after turn in 
+																				  //give half points after turn in 
 						Destroy(transform.parent.gameObject);
 						break;
 					case whichCollider.bad2:
 						lastSpawn = Instantiate(brokenPrefab, transform.position, transform.rotation);
 						Destroy(lastSpawn.transform.Find("CageSide").gameObject);//[WIP] replace with shatter model when made
-																	  //give half points after turn in 
+																				 //give half points after turn in 
 						Destroy(transform.parent.gameObject);
 						break;
 					case whichCollider.good:
