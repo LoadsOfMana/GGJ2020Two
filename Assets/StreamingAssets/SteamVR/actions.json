@@ -65,7 +65,7 @@
     },
     {
       "name": "/actions/default/in/SqueezeRight",
-      "type": "boolean"
+      "type": "vector1"
     },
     {
       "name": "/actions/default/in/TriggerRight",

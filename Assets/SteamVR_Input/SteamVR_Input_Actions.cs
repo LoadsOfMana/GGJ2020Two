@@ -45,7 +45,7 @@ namespace Valve.VR
         
         private static SteamVR_Action_Boolean p_default_GrabGripRight;
         
-        private static SteamVR_Action_Boolean p_default_SqueezeRight;
+        private static SteamVR_Action_Single p_default_SqueezeRight;
         
         private static SteamVR_Action_Boolean p_default_TriggerRight;
         
@@ -181,11 +181,11 @@ namespace Valve.VR
             }
         }
         
-        public static SteamVR_Action_Boolean default_SqueezeRight
+        public static SteamVR_Action_Single default_SqueezeRight
         {
             get
             {
-                return SteamVR_Actions.p_default_SqueezeRight.GetCopy<SteamVR_Action_Boolean>();
+                return SteamVR_Actions.p_default_SqueezeRight.GetCopy<SteamVR_Action_Single>();
             }
         }
         
@@ -350,7 +350,6 @@ namespace Valve.VR
                     SteamVR_Actions.default_ButtonB,
                     SteamVR_Actions.default_GrabPinchRight,
                     SteamVR_Actions.default_GrabGripRight,
-                    SteamVR_Actions.default_SqueezeRight,
                     SteamVR_Actions.default_TriggerRight,
                     SteamVR_Actions.default_ButtonARight,
                     SteamVR_Actions.default_ButtonBRight,
@@ -359,6 +358,7 @@ namespace Valve.VR
                     SteamVR_Actions.buggy_Reset};
             Valve.VR.SteamVR_Input.actionsSingle = new Valve.VR.SteamVR_Action_Single[] {
                     SteamVR_Actions.default_Squeeze,
+                    SteamVR_Actions.default_SqueezeRight,
                     SteamVR_Actions.buggy_Throttle};
             Valve.VR.SteamVR_Input.actionsVector2 = new Valve.VR.SteamVR_Action_Vector2[] {
                     SteamVR_Actions.platformer_Move,
@@ -407,7 +407,7 @@ namespace Valve.VR
             SteamVR_Actions.p_default_ButtonB = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/default/in/ButtonB")));
             SteamVR_Actions.p_default_GrabPinchRight = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/default/in/GrabPinchRight")));
             SteamVR_Actions.p_default_GrabGripRight = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/default/in/GrabGripRight")));
-            SteamVR_Actions.p_default_SqueezeRight = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/default/in/SqueezeRight")));
+            SteamVR_Actions.p_default_SqueezeRight = ((SteamVR_Action_Single)(SteamVR_Action.Create<SteamVR_Action_Single>("/actions/default/in/SqueezeRight")));
             SteamVR_Actions.p_default_TriggerRight = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/default/in/TriggerRight")));
             SteamVR_Actions.p_default_ButtonARight = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/default/in/ButtonARight")));
             SteamVR_Actions.p_default_ButtonBRight = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/default/in/ButtonBRight")));
