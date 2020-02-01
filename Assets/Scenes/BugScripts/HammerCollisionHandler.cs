@@ -31,6 +31,10 @@ public class HammerCollisionHandler : MonoBehaviour
         velocity.x = Random.Range(minV, maxV);
         velocity.y = Random.Range(minV, maxV);
         velocity.z = Random.Range(minV, maxV);
+
+        var newScale = newSpider.transform.localScale * Random.Range(.3f, 1f);
+        newSpider.transform.localScale = newScale;
+
         newSpider.GetComponent<Rigidbody>().velocity = velocity;
     }
 

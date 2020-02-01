@@ -24,7 +24,7 @@ public class SpiderScript : MonoBehaviour
         var v = r.velocity;
         var newV = Vector3.Reflect(v, f);
 
-        Debug.Log("spider hit, up is" + f + " oldV " + v + " newV " + newV);
+        //Debug.Log("spider hit, up is" + f + " oldV " + v + " newV " + newV);
 
         // reflect velocity off collision plane
         r.velocity = newV;
