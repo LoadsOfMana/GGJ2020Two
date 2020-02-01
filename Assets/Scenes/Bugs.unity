@@ -724,6 +724,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.117797986
       objectReference: {fileID: 0}
+    - target: {fileID: 6567542, guid: 562f0bb8ba91fe844baf976e5806516d, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 562f0bb8ba91fe844baf976e5806516d, type: 3}
 --- !u!1 &777443218
@@ -1273,7 +1277,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1652047166}
   - component: {fileID: 1652047165}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Hammer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1524,8 +1528,8 @@ GameObject:
   - component: {fileID: 1977023637}
   - component: {fileID: 1977023640}
   - component: {fileID: 1977023641}
-  m_Layer: 0
-  m_Name: Cylinder
+  m_Layer: 9
+  m_Name: Hammer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1553,7 +1557,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1977023635}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
