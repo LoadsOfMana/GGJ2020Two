@@ -43,6 +43,7 @@ public class SpiderScript : MonoBehaviour
             // right when it's created otherwise
             if (aliveTime > .5f)
             {
+                collider.gameObject.transform.parent.gameObject.GetComponent<AudioSource>().Play();
                 Destroy(gameObject);
             }
         }
