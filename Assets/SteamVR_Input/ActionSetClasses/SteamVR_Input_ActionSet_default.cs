@@ -129,7 +129,7 @@ namespace Valve.VR
             }
         }
         
-        public virtual SteamVR_Action_Boolean SqueezeRight
+        public virtual SteamVR_Action_Single SqueezeRight
         {
             get
             {
