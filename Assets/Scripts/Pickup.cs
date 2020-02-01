@@ -5,36 +5,16 @@ using UnityEngine;
 public class Pickup : MonoBehaviour
 {
 	public ControllerInput myHand;
-	public List<Rigidbody> touchingBodies;
-	private void OnTriggerEnter(Collider collision)
+	public Vector3 velocity;
+	private Vector3 lastFramePos;
+
+	private void Start()
 	{
-		Rigidbody otherBody = collision.gameObject.transform.root.GetComponent<Rigidbody>();
-		if (otherBody != null && !touchingBodies.Contains(otherBody))
-			touchingBodies.Add(otherBody);
-	}
-	private void OnTriggerExit(Collider collision)
-	{
-		Rigidbody otherBody = collision.gameObject.transform.root.GetComponent<Rigidbody>();
-		if (otherBody)
-			touchingBodies.Remove(otherBody);
+		lastFramePos = transform.position;
 	}
 	private void Update()
 	{
-		if (myHand.pinch.stateDown)
-		{
-			foreach(Rigidbody rb in touchingBodies)
-			{
-				rb.isKinematic = true;
-				rb.transform.parent = transform;
-			}
-		}
-		if (myHand.pinch.stateUp)
-		{
-			foreach (Rigidbody rb in touchingBodies)
-			{
-				rb.isKinematic = false;
-				rb.transform.parent = null;
-			}
-		}
+		velocity = (transform.position - lastFramePos) / Time.deltaTime;
+		lastFramePos = transform.position;
 	}
 }

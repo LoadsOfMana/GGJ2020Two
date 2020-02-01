@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3964025327167779845}
   - component: {fileID: 7780889187062064990}
   - component: {fileID: 1018134438685710304}
-  - component: {fileID: 4781817946220160495}
+  - component: {fileID: 2275521437584432952}
   m_Layer: 0
   m_Name: CageSide
   m_TagString: Untagged
@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 757eabbde66e9b345ac80deaaabc18af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4781817946220160495
+--- !u!114 &2275521437584432952
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -134,7 +134,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4854399412199811818}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b113bf4167374934aa09704a553fd3a8, type: 3}
+  m_Script: {fileID: 11500000, guid: 6d6c934d79e6fed4388b31de18a0c177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &6639311322349230865
@@ -151,7 +151,7 @@ GameObject:
   - component: {fileID: 7003450968306961641}
   - component: {fileID: 1121629149678865199}
   - component: {fileID: 4481500287146646855}
-  - component: {fileID: 5665062959887961356}
+  - component: {fileID: 8709095659328158200}
   m_Layer: 0
   m_Name: TravSide
   m_TagString: Untagged
@@ -262,7 +262,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 757eabbde66e9b345ac80deaaabc18af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &5665062959887961356
+--- !u!114 &8709095659328158200
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -271,7 +271,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6639311322349230865}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b113bf4167374934aa09704a553fd3a8, type: 3}
+  m_Script: {fileID: 11500000, guid: 6d6c934d79e6fed4388b31de18a0c177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &8688144082439523646

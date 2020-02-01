@@ -8,17 +8,7 @@ public class plateCollider : MonoBehaviour
 	public whichCollider whichCol;
 	public GameObject brokenPrefab;
 	public float breakThreshold = 3;
-	// Start is called before the first frame update
-	void Start()
-	{
 
-	}
-
-	// Update is called once per frame
-	void Update()
-	{
-
-	}
 	private void OnTriggerEnter(Collider other)
 	{
 		if (other.gameObject.tag == "Wrench")
@@ -30,27 +20,27 @@ public class plateCollider : MonoBehaviour
 			}
 			else
 			{
-				GameObject lastSpawn = new GameObject();
+				GameObject lastSpawn;
 				switch (whichCol)
 				{
 					case whichCollider.bad1:
 						lastSpawn = Instantiate(brokenPrefab, transform.position, transform.rotation);
-						Destroy(lastSpawn.transform.Find("TravSide").gameObject); //[WIP] replace with shatter model when made
-																				  //give half points after turn in 
-						Destroy(transform.parent.gameObject);
+						Destroy(lastSpawn.transform.Find("TravSide").gameObject); 
+						//spawn trav side shatter model						  
+						//give half points after turn in 
 						break;
 					case whichCollider.bad2:
 						lastSpawn = Instantiate(brokenPrefab, transform.position, transform.rotation);
-						Destroy(lastSpawn.transform.Find("CageSide").gameObject);//[WIP] replace with shatter model when made
-																				 //give half points after turn in 
-						Destroy(transform.parent.gameObject);
+						Destroy(lastSpawn.transform.Find("CageSide").gameObject);
+						//spawn cage side shatter model									 
+						//give half points after turn in 
 						break;
 					case whichCollider.good:
-						lastSpawn = Instantiate(brokenPrefab, transform.position, transform.rotation);
+							lastSpawn = Instantiate(brokenPrefab, transform.position, transform.rotation);
 						//give full points after turn in 
-						Destroy(transform.parent.gameObject);
 						break;
 				}
+				Destroy(transform.parent.gameObject);
 			}
 		}
 	}

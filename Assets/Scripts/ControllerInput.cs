@@ -28,7 +28,7 @@ public class ControllerInput : MonoBehaviour
 	//	TouchPad();
 	//	Squeeze();
 	//	Grab();
-		Pinch();
+	//	Pinch();
 	//	Trigger();
 	//	Skeleton();
 	}
