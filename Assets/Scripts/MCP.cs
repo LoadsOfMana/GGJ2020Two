@@ -13,8 +13,10 @@ public class MCP : MonoBehaviour
 	public TMPro.TextMeshPro textDisplay;
 	public SpriteRenderer imgDisplay;
 	public AudioSource monitorSound;
+	public TMPro.TextMeshPro scoreText;
 	public Stage[] stages;
 	private int whichStage = 0;
+	public bool fixTheDamnPlate = false;
 	// Start is called before the first frame update
 	void Awake()
     {
@@ -28,13 +30,28 @@ public class MCP : MonoBehaviour
 	// Update is called once per frame
 	void Update()
     {
+		if (Input.GetKeyDown(KeyCode.P))
+			SkipPuzzle();
         if(queuedScore != 0 && mustClearList.Count == 0)
 		{
-			currentScore += queuedScore;
+			if(queuedScore > 0)
+				currentScore += queuedScore;
+			if (queuedScore == -1)
+				queuedScore = 0;
+			scoreText.text = currentScore + "";
 			queuedScore = 0;
 			NextPuzzle();
 		}
     }
+	void SkipPuzzle()
+	{
+		for (int i = mustClearList.Count; i >0; i--)
+		{
+			Destroy(mustClearList[i - 1]);
+		}
+		mustClearList.Clear();
+		queuedScore = 1;
+	}
 	void NextPuzzle()
 	{
 		puzzleSpawn.SpawnNext(whichStage);
@@ -42,6 +59,8 @@ public class MCP : MonoBehaviour
 		textDisplay.text = stages[whichStage].text;
 		monitorSound.Play();
 		whichStage++;
+		if (whichStage >= stages.Length)
+			whichStage = 0;
 	}
 }
 

@@ -247,10 +247,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 315e569e45b7f1e42b8cee5a77351e22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  outcomeState: 0
+  scores: 
+  sounds: []
+  messages: []
   whichCol: 0
   brokenPrefab: {fileID: 8688144082439523646, guid: 76d18d719ae58444983d89bf687fb614,
     type: 3}
   breakThreshold: 3
+  otherCol1: {fileID: 7249551773534972001}
+  otherCol2: {fileID: 7249551774392745474}
 --- !u!1 &7249551773228500493
 GameObject:
   m_ObjectHideFlags: 0
@@ -689,10 +695,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 315e569e45b7f1e42b8cee5a77351e22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  outcomeState: 0
+  scores: 
+  sounds: []
+  messages: []
   whichCol: 1
   brokenPrefab: {fileID: 8688144082439523646, guid: 76d18d719ae58444983d89bf687fb614,
     type: 3}
   breakThreshold: 3
+  otherCol1: {fileID: 7249551773144195553}
+  otherCol2: {fileID: 7249551774392745474}
 --- !u!1 &7249551773890067973
 GameObject:
   m_ObjectHideFlags: 0
@@ -943,10 +955,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 315e569e45b7f1e42b8cee5a77351e22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  outcomeState: 0
+  scores: 
+  sounds: []
+  messages: []
   whichCol: 2
   brokenPrefab: {fileID: 8688144082439523646, guid: 76d18d719ae58444983d89bf687fb614,
     type: 3}
   breakThreshold: 3
+  otherCol1: {fileID: 7249551773144195553}
+  otherCol2: {fileID: 7249551773534972001}
 --- !u!1 &7249551774397997362
 GameObject:
   m_ObjectHideFlags: 0

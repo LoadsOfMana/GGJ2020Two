@@ -6,7 +6,7 @@ public class SpiderScript : MonoBehaviour
 {
     public float SpawnTime;
     public GameController Game;
-
+	private float lookOffset;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +16,7 @@ public class SpiderScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.localRotation = Quaternion.Euler(0, Mathf.Sin(Time.time*10)*35, 0);
+        transform.localRotation = Quaternion.Euler(0, Mathf.Sin((Time.time)*10)*35, 0);
     }
 
     private void OnTriggerEnter(Collider collider)

@@ -13,9 +13,28 @@ public class MoBoBase : MonoBehaviour
     {
         
     }
-
-    // Update is called once per frame
-    void Update()
+	private void OnCollisionEnter(Collision collision)
+	{
+		if(collision.collider.tag == "Workbench")
+		{
+			foreach(GameObject bug in bugs)
+			{
+				bug.SetActive(true);
+			}
+		}
+	}
+	private void OnDestroy()
+	{
+		float tempScore = 0;
+		if (bugs.Count == 0)
+			tempScore += 0.5f;
+		if (parts.Count >= 6)
+			tempScore += 0.5f;
+		MCP.mcp.queuedScore = tempScore;
+			
+	}
+	// Update is called once per frame
+	void Update()
     {
 		for(int i = bugs.Count; i > 0; i--)
 		{

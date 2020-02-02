@@ -16,23 +16,12 @@ public class BeltEndHandler : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter(Collider other)
+	private void OnTriggerEnter(Collider other)
 	{
-		GameObject incoming = other.gameObject;
-        if(incoming && incoming.GetComponent<PuzzleWithOutcome>()) 
-        {
-            // XXX we need to check incoming for a score, text, audio, etc first
-            Score(incoming.GetComponent<PuzzleWithOutcome>());
-            Destroy(incoming, 5.0f); // XXX this could lead to a race, change to
-                                    // a queued approach?
-        }
+		if (other.gameObject.transform.root.GetComponent<SpawnOnDestroy>())
+			other.gameObject.transform.root.GetComponent<SpawnOnDestroy>().disarm = true;
+		if (other.gameObject.transform.root.GetComponent<MustClear>())
+			Destroy(other.transform.root.gameObject);
+	}
 
-    }
-
-    void Score(PuzzleWithOutcome p)
-    {
-        // XXX add logic here to send text to UI, sound to player, score to total
-        Debug.Log(p);
-        return;
-    }
 }

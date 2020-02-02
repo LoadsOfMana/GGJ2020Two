@@ -6,6 +6,9 @@ public class BeeAI : MonoBehaviour
 {
 	public float force = 0.1f;
 	private Rigidbody myBody;
+	public Transform[] manualTargets;
+	private float tarTimer = 1;
+	private int randTar;
 	// Start is called before the first frame update
 	void Start()
 	{
@@ -15,7 +18,17 @@ public class BeeAI : MonoBehaviour
 	// Update is called once per frame
 	void FixedUpdate()
 	{
+		transform.LookAt(manualTargets[randTar]);
+		tarTimer -= Time.deltaTime;
+		if(tarTimer <= 0)
+		{
+			tarTimer = 1;
+			randTar = Random.Range(0, manualTargets.Length);
+		}
+		if(manualTargets.Length == 0)
 		myBody.AddForce((MCP.mcp.player.position - transform.position).normalized * force);
+		else
+			myBody.AddForce((manualTargets[randTar].position - transform.position).normalized * force);
 	}
 	private void OnTriggerEnter(Collider collider)
 	{

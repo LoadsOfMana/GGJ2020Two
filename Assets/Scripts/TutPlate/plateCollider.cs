@@ -9,17 +9,22 @@ public class plateCollider : PuzzleWithOutcome
 	public GameObject brokenPrefab;
 	public float breakThreshold = 3;
 	private bool broken = false;
+	public GameObject otherCol1;
+	public GameObject otherCol2;
 	private void OnTriggerEnter(Collider other)
 	{
+		if (MCP.mcp.fixTheDamnPlate)
+			return;
 		if (other.gameObject.tag == "Wrench" && !broken)
 		{
-			broken = true;
 			if (other.gameObject.GetComponent<WrenchHead1>().speed > breakThreshold)
 			{
-				MCP.mcp.queuedScore = 0f;
+				MCP.mcp.queuedScore = -1f;
+				broken = true;
+				MCP.mcp.fixTheDamnPlate = true;
 				Destroy(transform.parent.gameObject); //[WIP] replace with shatter model when made
 			}
-			else if (other.gameObject.GetComponent<WrenchHead1>().speed > 1)
+			else if (other.gameObject.GetComponent<WrenchHead1>().speed > 0.5f)
 			{
 				GameObject lastSpawn;
 				switch (whichCol)
@@ -39,6 +44,10 @@ public class plateCollider : PuzzleWithOutcome
 						MCP.mcp.queuedScore = 1f;
 						break;
 				}
+				broken = true;
+				MCP.mcp.fixTheDamnPlate = true;
+				Destroy(otherCol1);
+				Destroy(otherCol2);
 				Destroy(transform.parent.gameObject);
 			}
 		}

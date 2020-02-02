@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class CakePuzzle : MonoBehaviour
 {
-    private int[] cutEndpoints;
+    private int[] cutEndpoints = new int[6];
     private int cutNumber = 0;
     private int cutState = -1;
-
+	public List<CakeTrigger> theBois;
+	public int firstNum = -1;
+	public Transform firstPointVis;
+	public GameObject cakeLineRender;
     private bool between (int low, int high, int x)
     {
         return (low < x && x < high);
@@ -20,20 +23,52 @@ public class CakePuzzle : MonoBehaviour
 
     private void Pass()
     {
-        
+		ShutDownTheBois();
+		MCP.mcp.queuedScore = 1;
     }
 
     private void Fail()
-    {
-        
-    }
+	{
+		ShutDownTheBois();
+		MCP.mcp.queuedScore = -1;
+	}
 
     // Start is called before the first frame update
     void Start()
     {
         
     }
+	void ResetTheBois()
+	{
+		foreach(CakeTrigger boi in theBois)
+		{
+			boi.touched = false;
+		}
+		firstNum = -1;
+	}
+	void ShutDownTheBois()
+	{
+		foreach (CakeTrigger boi in theBois)
+		{
+			boi.gameObject.SetActive(false);
+		}
+	}
+	public void AddNum(int whatNum, Transform visPoint)
+	{
+		if (firstNum == -1)
+		{
+			firstNum = whatNum;
+			firstPointVis = visPoint;
+		}
+		else if (whatNum > firstNum + 1 || whatNum < firstNum - 1)
+		{
+			CakeLine lineo = Instantiate(cakeLineRender).GetComponent<CakeLine>();
+			lineo.firstPoint = firstPointVis;
+			lineo.secondPoint = visPoint;
+			Cut(firstNum, whatNum);
 
+		}
+	}
     // Update is called once per frame
     void Update()
     {
@@ -117,7 +152,8 @@ public class CakePuzzle : MonoBehaviour
                     }
                 }
                 break;
-        }
+		}
+		ResetTheBois();
 
-    }
+	}
 }
