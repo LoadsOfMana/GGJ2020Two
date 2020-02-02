@@ -35,7 +35,7 @@ public class SpiderScript : MonoBehaviour
             // reflect velocity off collision plane
             r.velocity = newV;
         }
-        else
+        else if (name.StartsWith("Hammer"))
         {
             Debug.Log("hit with " + name + "detected");
             var aliveTime = Time.time - SpawnTime;
@@ -48,6 +48,12 @@ public class SpiderScript : MonoBehaviour
                 Destroy(gameObject);
                 Game.BugKilled();
             }
+        } else if (name.StartsWith("Floor"))
+        {
+            // in this case destroy the object without decrementing
+            // bug count, we can assume it makes it's way back into the machine
+            Debug.Log("spider hit floor");
+            Destroy(gameObject);
         }
         
     }
