@@ -45,11 +45,11 @@ public class SpiderScript : MonoBehaviour
             if (aliveTime > .5f)
             {
                 collider.gameObject.transform.parent.gameObject.GetComponent<AudioSource>().Play();
-                Destroy(gameObject);
                 if (Game != null)
                 {
-                    Game.BugKilled();
+                    Game.BugKilled(gameObject);
                 }
+                Destroy(gameObject);
             }
         } else if (name.StartsWith("Floor"))
         {

@@ -6,6 +6,8 @@ public class GameController : MonoBehaviour
 {
     public TextMesh MachineText;
     public int BugCount;
+    public AudioSource JumpSoundSource;
+    public GameObject Explosion;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +21,12 @@ public class GameController : MonoBehaviour
         
     }
 
-    public void BugKilled()
+    public void LaunchBug()
+    {
+        JumpSoundSource.Play();
+    }
+
+    public void BugKilled(GameObject bug)
     {
         if (BugCount > 0)
         {
@@ -33,5 +40,9 @@ public class GameController : MonoBehaviour
         {
             MachineText.text = "Fixed!";
         }
+
+        var e = Instantiate(Explosion);
+        e.transform.position = bug.transform.position;
+        Debug.Log("created explosion at " + e.transform.position);
     }
 }

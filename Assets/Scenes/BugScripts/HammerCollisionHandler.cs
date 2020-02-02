@@ -48,6 +48,8 @@ public class HammerCollisionHandler : MonoBehaviour
             Debug.Log(rgb);
             var main = ps.main;
             main.startColor = rgb;
+
+            Game.LaunchBug();
         }
     }
 
