@@ -16,6 +16,10 @@ public class FreeTheChildren : MonoBehaviour
 	IEnumerator delayedDo()
 	{
 		yield return new WaitForSeconds (delay);
+		foreach(Transform child in transform)
+		{
+			child.parent = null;
+		}
 		if(transform.Find("TravSide"))
 		transform.Find("TravSide").parent = null;
 		if (transform.Find("CageSide"))

@@ -11,7 +11,7 @@ public class SoundButton : MonoBehaviour
 		mySound = GetComponent<AudioSource>();
     }
 
-	private void OnTriggerStay(Collider other)
+	private void OnTriggerEnter(Collider other)
 	{
 		if (other.gameObject.tag == "Wrench")
 		{
