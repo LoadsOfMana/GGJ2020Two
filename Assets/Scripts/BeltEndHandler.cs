@@ -17,9 +17,9 @@ public class BeltEndHandler : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other)
-    {
-        GameObject incoming = other.gameObject;
-        if(incoming) 
+	{
+		GameObject incoming = other.gameObject;
+        if(incoming && incoming.GetComponent<PuzzleWithOutcome>()) 
         {
             // XXX we need to check incoming for a score, text, audio, etc first
             Score(incoming.GetComponent<PuzzleWithOutcome>());
