@@ -46,7 +46,10 @@ public class SpiderScript : MonoBehaviour
             {
                 collider.gameObject.transform.parent.gameObject.GetComponent<AudioSource>().Play();
                 Destroy(gameObject);
-                Game.BugKilled();
+                if (Game != null)
+                {
+                    Game.BugKilled();
+                }
             }
         } else if (name.StartsWith("Floor"))
         {

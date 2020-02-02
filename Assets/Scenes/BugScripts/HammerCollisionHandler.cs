@@ -42,6 +42,12 @@ public class HammerCollisionHandler : MonoBehaviour
             newSpider.transform.localScale = newScale;
 
             newSpider.GetComponent<Rigidbody>().velocity = velocity;
+
+            var ps = newSpider.GetComponent<ParticleSystem>();
+            var rgb = Color.HSVToRGB(Random.Range(0f, 1f), 1, 1);
+            Debug.Log(rgb);
+            var main = ps.main;
+            main.startColor = rgb;
         }
     }
 
