@@ -42,6 +42,8 @@ public class GameController : MonoBehaviour
         }
 
         var e = Instantiate(Explosion);
+        var script = e.GetComponent<BugExplosionScript>();
+        script.IsPrefab = false;
         e.transform.position = bug.transform.position;
         Debug.Log("created explosion at " + e.transform.position);
     }
