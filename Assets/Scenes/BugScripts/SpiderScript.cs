@@ -5,6 +5,7 @@ using UnityEngine;
 public class SpiderScript : MonoBehaviour
 {
     public float SpawnTime;
+    public GameController Game;
 
     // Start is called before the first frame update
     void Start()
@@ -34,7 +35,7 @@ public class SpiderScript : MonoBehaviour
             // reflect velocity off collision plane
             r.velocity = newV;
         }
-        else
+        else if (name.StartsWith("Hammer"))
         {
             Debug.Log("hit with " + name + "detected");
             var aliveTime = Time.time - SpawnTime;
@@ -45,7 +46,17 @@ public class SpiderScript : MonoBehaviour
             {
                 collider.gameObject.transform.parent.gameObject.GetComponent<AudioSource>().Play();
                 Destroy(gameObject);
+                if (Game != null)
+                {
+                    Game.BugKilled();
+                }
             }
+        } else if (name.StartsWith("Floor"))
+        {
+            // in this case destroy the object without decrementing
+            // bug count, we can assume it makes it's way back into the machine
+            Debug.Log("spider hit floor");
+            Destroy(gameObject);
         }
         
     }

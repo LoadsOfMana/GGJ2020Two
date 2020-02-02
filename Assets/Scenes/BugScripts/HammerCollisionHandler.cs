@@ -5,6 +5,7 @@ using UnityEngine;
 public class HammerCollisionHandler : MonoBehaviour
 {
     public GameObject SpiderPrefab;
+    public GameController Game;
 
     // Start is called before the first frame update
     void Start()
@@ -23,23 +24,30 @@ public class HammerCollisionHandler : MonoBehaviour
     {
         var name = c.gameObject.name;
 
-        if (name.StartsWith("generator"))
+        if (name.StartsWith("machine"))
         {
+            if (Game.BugCount <= 0) {
+                return;
+            }
             Debug.Log(c);
             var newSpider = Instantiate(SpiderPrefab);
 
             newSpider.transform.position = transform.position;
             Vector3 velocity;
-            var minV = -0.5f;
-            var maxV = -minV;
-            velocity.x = Random.Range(minV, maxV);
-            velocity.y = Random.Range(minV, maxV);
-            velocity.z = Random.Range(minV, maxV);
+            velocity.x = Random.Range(-.5f,.5f);
+            velocity.y = Random.Range(3f,6f);
+            velocity.z = Random.Range(.2f, .5f);
 
             var newScale = newSpider.transform.localScale * Random.Range(.3f, 1f);
             newSpider.transform.localScale = newScale;
 
             newSpider.GetComponent<Rigidbody>().velocity = velocity;
+
+            var ps = newSpider.GetComponent<ParticleSystem>();
+            var rgb = Color.HSVToRGB(Random.Range(0f, 1f), 1, 1);
+            Debug.Log(rgb);
+            var main = ps.main;
+            main.startColor = rgb;
         }
     }
 
