@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4674158668080522662}
   - component: {fileID: 2682239163497420284}
   - component: {fileID: 6620247867234940403}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LeftEye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 2860775558275874422}
   - component: {fileID: 27377647284048320}
   - component: {fileID: 2523396626058158998}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -170,7 +170,7 @@ GameObject:
   - component: {fileID: 8234393315174394446}
   - component: {fileID: 2541638717854441175}
   - component: {fileID: 7139491561754660238}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RightPupil
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -249,7 +249,7 @@ GameObject:
   - component: {fileID: 3779741321863529488}
   - component: {fileID: 4127366104921329226}
   - component: {fileID: 1881682898258364368}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RightEye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -329,7 +329,7 @@ GameObject:
   - component: {fileID: 3697688016329428672}
   - component: {fileID: 6297456071119156034}
   - component: {fileID: 5710348934292263990}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LeftPupil
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -409,7 +409,10 @@ GameObject:
   - component: {fileID: 8112076294667864584}
   - component: {fileID: 2571391569697470193}
   - component: {fileID: 8296172669157469602}
-  m_Layer: 0
+  - component: {fileID: 1183637221286386584}
+  - component: {fileID: 5726825696626581979}
+  - component: {fileID: 8280549666944405906}
+  m_Layer: 8
   m_Name: Bug
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -425,7 +428,7 @@ Transform:
   m_GameObject: {fileID: 4292982741799158317}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.4827797, y: 0.2374, z: -1.7264249}
-  m_LocalScale: {x: 1.6714561, y: 1.6714561, z: 1.6714561}
+  m_LocalScale: {x: 1.6714566, y: 1.671456, z: 1.6714566}
   m_Children:
   - {fileID: 4674158668080522662}
   - {fileID: 2860775558275874422}
@@ -490,11 +493,54 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4292982741799158317}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.010246325
   m_Center: {x: -0.0002463269, y: 0, z: 4.656613e-10}
+--- !u!54 &1183637221286386584
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4292982741799158317}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &5726825696626581979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4292982741799158317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38593950b93c09843ab6875c796c98be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpawnTime: 0
+  Game: {fileID: 0}
+--- !u!114 &8280549666944405906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4292982741799158317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfdcc9397265c28448a2f953b77dc4e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  variance: 0.5
 --- !u!1 &5110764358891438987
 GameObject:
   m_ObjectHideFlags: 0
@@ -506,7 +552,7 @@ GameObject:
   - component: {fileID: 6369944755335894407}
   - component: {fileID: 3059047146423413329}
   - component: {fileID: 4608189343426180202}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Leg1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -585,7 +631,7 @@ GameObject:
   - component: {fileID: 7363943180383360225}
   - component: {fileID: 4749412170219635407}
   - component: {fileID: 4674194306728328121}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Leg2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

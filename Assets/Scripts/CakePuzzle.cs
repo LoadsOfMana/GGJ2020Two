@@ -18,22 +18,14 @@ public class CakePuzzle : MonoBehaviour
         return (between(x, y, a) != between(x, y, b));
     }
 
-    private bool Pass()
+    private void Pass()
     {
-        // we have six pieces of cake
-        // if cutState is 9 (perfect cut), maybe give a bonus?
-        throw new System.NotImplementedException();
+        
     }
 
-    private bool Fail()
+    private void Fail()
     {
-        // we have not six pieces of cake: 
-        // if cutState is 0, 1, or 2, we're not done cutting
-        // if cutState is 3, we have four pieces
-        // if cutState is 4 or 6, we have five pieces
-        // if cutState = 5, 7, or 9, we have six pieces (and we're not here)
-        // if cutState is 8, we have seven pieces
-        throw new System.NotImplementedException();
+        
     }
 
     // Start is called before the first frame update

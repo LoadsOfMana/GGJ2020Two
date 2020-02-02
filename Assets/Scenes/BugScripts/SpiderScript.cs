@@ -37,20 +37,23 @@ public class SpiderScript : MonoBehaviour
         }
         else if (name.StartsWith("Hammer"))
         {
-            Debug.Log("hit with " + name + "detected");
-            var aliveTime = Time.time - SpawnTime;
-            // have cooldown before spider can be killed with hammer,
-            // since right now hammer spawns spider it might disappear
-            // right when it's created otherwise
-            if (aliveTime > .5f)
-            {
-                collider.gameObject.transform.parent.gameObject.GetComponent<AudioSource>().Play();
-                if (Game != null)
-                {
-                    Game.BugKilled(gameObject);
-                }
-                Destroy(gameObject);
-            }
+			if ((collider.transform.parent.GetComponent<WrenchHead1>() && collider.transform.parent.GetComponent<WrenchHead1>().speed > 2) || !collider.transform.parent.GetComponent<WrenchHead1>())
+			{
+				Debug.Log("hit with " + name + "detected");
+				var aliveTime = Time.time - SpawnTime;
+				// have cooldown before spider can be killed with hammer,
+				// since right now hammer spawns spider it might disappear
+				// right when it's created otherwise
+				if (aliveTime > .5f)
+				{
+					collider.gameObject.transform.parent.gameObject.GetComponent<AudioSource>().Play();
+					if (Game != null)
+					{
+						Game.BugKilled(gameObject);
+					}
+					Destroy(gameObject);
+				}
+			}
         } else if (name.StartsWith("Floor"))
         {
             // in this case destroy the object without decrementing

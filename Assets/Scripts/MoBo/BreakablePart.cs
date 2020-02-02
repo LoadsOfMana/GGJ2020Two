@@ -21,7 +21,7 @@ public class BreakablePart : MonoBehaviour
 	{
 		if(other.gameObject.tag == "Wrench")
 		{
-			if(other.gameObject.GetComponent<WrenchHead1>().speed > breakThreshold)
+			if (other.gameObject.GetComponent<WrenchHead1>().speed > breakThreshold)
 			{
 				Instantiate(particles, transform.position,transform.rotation);
 				Destroy(gameObject);

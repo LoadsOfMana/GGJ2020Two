@@ -16,29 +16,27 @@ public class plateCollider : PuzzleWithOutcome
 			broken = true;
 			if (other.gameObject.GetComponent<WrenchHead1>().speed > breakThreshold)
 			{
+				MCP.mcp.queuedScore = 0f;
 				Destroy(transform.parent.gameObject); //[WIP] replace with shatter model when made
-				//give no points after turn in
 			}
-			else
+			else if (other.gameObject.GetComponent<WrenchHead1>().speed > 1)
 			{
 				GameObject lastSpawn;
 				switch (whichCol)
 				{
 					case whichCollider.bad1:
 						lastSpawn = Instantiate(brokenPrefab, transform.position, transform.rotation);
-						Destroy(lastSpawn.transform.Find("TravSide").gameObject); 
-						//spawn trav side shatter model						  
-						//give half points after turn in 
+						Destroy(lastSpawn.transform.Find("TravSide").gameObject);
+						MCP.mcp.queuedScore = 0.5f;
 						break;
 					case whichCollider.bad2:
 						lastSpawn = Instantiate(brokenPrefab, transform.position, transform.rotation);
 						Destroy(lastSpawn.transform.Find("CageSide").gameObject);
-						//spawn cage side shatter model									 
-						//give half points after turn in 
+						MCP.mcp.queuedScore = 0.5f;
 						break;
 					case whichCollider.good:
-							lastSpawn = Instantiate(brokenPrefab, transform.position, transform.rotation);
-						//give full points after turn in 
+						lastSpawn = Instantiate(brokenPrefab, transform.position, transform.rotation);
+						MCP.mcp.queuedScore = 1f;
 						break;
 				}
 				Destroy(transform.parent.gameObject);

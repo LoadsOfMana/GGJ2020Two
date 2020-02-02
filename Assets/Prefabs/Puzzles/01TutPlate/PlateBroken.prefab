@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7780889187062064990}
   - component: {fileID: 1018134438685710304}
   - component: {fileID: 2275521437584432952}
+  - component: {fileID: 3115986952401037164}
   m_Layer: 0
   m_Name: CageSide
   m_TagString: Untagged
@@ -137,6 +138,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d6c934d79e6fed4388b31de18a0c177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3115986952401037164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4854399412199811818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6399c0e156ea7744ab500852e9c6f5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theThing: {fileID: 6380004594403628722, guid: 8d83208260f54ac4da8211f8c54185a4,
+    type: 3}
 --- !u!1 &6639311322349230865
 GameObject:
   m_ObjectHideFlags: 0
@@ -152,6 +167,7 @@ GameObject:
   - component: {fileID: 1121629149678865199}
   - component: {fileID: 4481500287146646855}
   - component: {fileID: 8709095659328158200}
+  - component: {fileID: 814007982058595681}
   m_Layer: 0
   m_Name: TravSide
   m_TagString: Untagged
@@ -274,6 +290,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d6c934d79e6fed4388b31de18a0c177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &814007982058595681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6639311322349230865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6399c0e156ea7744ab500852e9c6f5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theThing: {fileID: 2359661024283282304, guid: c46a8c50b976f824284228799d2284ee,
+    type: 3}
 --- !u!1 &8688144082439523646
 GameObject:
   m_ObjectHideFlags: 0
@@ -284,6 +314,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5677109324815449901}
   - component: {fileID: 843175973390102701}
+  - component: {fileID: 5557749075669251468}
   m_Layer: 0
   m_Name: PlateBroken
   m_TagString: Untagged
@@ -403,3 +434,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5557749075669251468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8688144082439523646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0aab178b31d5a9c46b331d5918e31486, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyAfter: 1
