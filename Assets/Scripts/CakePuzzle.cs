@@ -22,6 +22,7 @@ public class CakePuzzle : MonoBehaviour
     {
         // we have six pieces of cake
         // if cutState is 9 (perfect cut), maybe give a bonus?
+        throw new System.NotImplementedException();
     }
 
     private bool Fail()
@@ -32,6 +33,7 @@ public class CakePuzzle : MonoBehaviour
         // if cutState is 4 or 6, we have five pieces
         // if cutState = 5, 7, or 9, we have six pieces (and we're not here)
         // if cutState is 8, we have seven pieces
+        throw new System.NotImplementedException();
     }
 
     // Start is called before the first frame update
@@ -48,7 +50,7 @@ public class CakePuzzle : MonoBehaviour
 
     public void Cut(int end1, int end2)
     {
-        switch (state) {
+        switch (cutState) { // changed from state to cutState to fix compile error, not sure if correct
             case -1: // start state, just remember the first cut
                 cutEndpoints[0] = end1 < end2 ? end1 : end2;
                 cutEndpoints[1] = end1 < end2 ? end2 : end1;
@@ -122,7 +124,7 @@ public class CakePuzzle : MonoBehaviour
                         Fail();
                     }
                 }
-
+                break;
         }
 
     }
