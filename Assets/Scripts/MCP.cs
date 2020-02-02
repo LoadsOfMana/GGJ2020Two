@@ -17,6 +17,7 @@ public class MCP : MonoBehaviour
 	public Stage[] stages;
 	private int whichStage = 0;
 	public bool fixTheDamnPlate = false;
+	public AudioSource wowBox;
 	// Start is called before the first frame update
 	void Awake()
     {
@@ -54,6 +55,7 @@ public class MCP : MonoBehaviour
 	}
 	void NextPuzzle()
 	{
+		fixTheDamnPlate = false;
 		puzzleSpawn.SpawnNext(whichStage);
 		imgDisplay.sprite = stages[whichStage].sprite;
 		textDisplay.text = stages[whichStage].text;

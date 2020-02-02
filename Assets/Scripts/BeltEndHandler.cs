@@ -21,7 +21,10 @@ public class BeltEndHandler : MonoBehaviour
 		if (other.gameObject.transform.root.GetComponent<SpawnOnDestroy>())
 			other.gameObject.transform.root.GetComponent<SpawnOnDestroy>().disarm = true;
 		if (other.gameObject.transform.root.GetComponent<MustClear>())
+		{
+			MCP.mcp.queuedScore += other.gameObject.transform.root.GetComponent<MustClear>().addScore;
 			Destroy(other.transform.root.gameObject);
+		}
 	}
 
 }

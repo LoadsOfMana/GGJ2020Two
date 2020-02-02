@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2612801272328229983}
+  - component: {fileID: 8490458880023225855}
+  - component: {fileID: 9129928579466241919}
   m_Layer: 0
   m_Name: Pot3Shatter
   m_TagString: Untagged
@@ -38,9 +40,120 @@ Transform:
   - {fileID: 3023505037976585945}
   - {fileID: 5429901072415282722}
   - {fileID: 5866936081062973233}
+  - {fileID: 2200762763955570884}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &8490458880023225855
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1110088827537190678}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 324906199b210aa4085a389e596344a6, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &9129928579466241919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1110088827537190678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5103698b2d14bf44acf9accb287aa47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  variance: 0
+  lifeSpan: 7
 --- !u!1 &1376970623459891389
 GameObject:
   m_ObjectHideFlags: 0
@@ -54,7 +167,8 @@ GameObject:
   - component: {fileID: 3016233812100783358}
   - component: {fileID: 1376970623459891387}
   - component: {fileID: 1376970623459891388}
-  m_Layer: 0
+  - component: {fileID: 1969803461675172741}
+  m_Layer: 13
   m_Name: pCylinder9_shard6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -153,6 +267,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1969803461675172741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1376970623459891389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5103698b2d14bf44acf9accb287aa47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  variance: 1
+  lifeSpan: 5
 --- !u!1 &2337738023205614044
 GameObject:
   m_ObjectHideFlags: 0
@@ -166,7 +294,8 @@ GameObject:
   - component: {fileID: 802760688540642765}
   - component: {fileID: 2337738023205614042}
   - component: {fileID: 2337738023205614043}
-  m_Layer: 0
+  - component: {fileID: 4935624892233169765}
+  m_Layer: 13
   m_Name: pCylinder9_shard10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -265,6 +394,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &4935624892233169765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2337738023205614044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5103698b2d14bf44acf9accb287aa47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  variance: 1
+  lifeSpan: 5
 --- !u!1 &2412825224856566107
 GameObject:
   m_ObjectHideFlags: 0
@@ -278,7 +421,8 @@ GameObject:
   - component: {fileID: 8330452661357351992}
   - component: {fileID: 2412825224856566105}
   - component: {fileID: 2412825224856566106}
-  m_Layer: 0
+  - component: {fileID: 9173593844361764582}
+  m_Layer: 13
   m_Name: pCylinder9_shard9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -377,6 +521,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &9173593844361764582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2412825224856566107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5103698b2d14bf44acf9accb287aa47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  variance: 1
+  lifeSpan: 5
 --- !u!1 &2718866828361611282
 GameObject:
   m_ObjectHideFlags: 0
@@ -390,7 +548,8 @@ GameObject:
   - component: {fileID: 7004526598820981547}
   - component: {fileID: 2718866828361611280}
   - component: {fileID: 2718866828361611281}
-  m_Layer: 0
+  - component: {fileID: 7097473782803197812}
+  m_Layer: 13
   m_Name: pCylinder9_shard2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -489,6 +648,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &7097473782803197812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2718866828361611282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5103698b2d14bf44acf9accb287aa47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  variance: 1
+  lifeSpan: 5
 --- !u!1 &3068184692223537579
 GameObject:
   m_ObjectHideFlags: 0
@@ -502,7 +675,8 @@ GameObject:
   - component: {fileID: 1521905994011694729}
   - component: {fileID: 3068184692223537577}
   - component: {fileID: 3068184692223537578}
-  m_Layer: 0
+  - component: {fileID: 855237218302341180}
+  m_Layer: 13
   m_Name: pCylinder9_shard5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -601,6 +775,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &855237218302341180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3068184692223537579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5103698b2d14bf44acf9accb287aa47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  variance: 1
+  lifeSpan: 5
 --- !u!1 &3230303352091973203
 GameObject:
   m_ObjectHideFlags: 0
@@ -614,7 +802,8 @@ GameObject:
   - component: {fileID: 9036516230845241121}
   - component: {fileID: 3230303352091973201}
   - component: {fileID: 3230303352091973202}
-  m_Layer: 0
+  - component: {fileID: 7935000875756507577}
+  m_Layer: 13
   m_Name: pCylinder9_shard4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -713,6 +902,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &7935000875756507577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3230303352091973203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5103698b2d14bf44acf9accb287aa47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  variance: 1
+  lifeSpan: 5
 --- !u!1 &5599094230483121748
 GameObject:
   m_ObjectHideFlags: 0
@@ -726,7 +929,8 @@ GameObject:
   - component: {fileID: 8850061292437329809}
   - component: {fileID: 5599094230483121746}
   - component: {fileID: 5599094230483121747}
-  m_Layer: 0
+  - component: {fileID: 5839391201572707644}
+  m_Layer: 13
   m_Name: pCylinder9_shard1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -825,6 +1029,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &5839391201572707644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5599094230483121748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5103698b2d14bf44acf9accb287aa47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  variance: 1
+  lifeSpan: 5
 --- !u!1 &5866936081062973234
 GameObject:
   m_ObjectHideFlags: 0
@@ -838,7 +1056,8 @@ GameObject:
   - component: {fileID: 5866936081062973232}
   - component: {fileID: 5866936081062973197}
   - component: {fileID: 5866936081062973198}
-  m_Layer: 0
+  - component: {fileID: 8672968061836140739}
+  m_Layer: 13
   m_Name: Potlid (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -936,6 +1155,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8672968061836140739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5866936081062973234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5103698b2d14bf44acf9accb287aa47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  variance: 1
+  lifeSpan: 5
 --- !u!1 &6596287819711664784
 GameObject:
   m_ObjectHideFlags: 0
@@ -949,7 +1182,8 @@ GameObject:
   - component: {fileID: 352506126942647988}
   - component: {fileID: 6596287819711664878}
   - component: {fileID: 6596287819711664879}
-  m_Layer: 0
+  - component: {fileID: 3949329439765023851}
+  m_Layer: 13
   m_Name: pCylinder9_shard3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1048,6 +1282,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &3949329439765023851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6596287819711664784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5103698b2d14bf44acf9accb287aa47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  variance: 1
+  lifeSpan: 5
 --- !u!1 &7449412222695476898
 GameObject:
   m_ObjectHideFlags: 0
@@ -1061,7 +1309,8 @@ GameObject:
   - component: {fileID: 1687103522093964843}
   - component: {fileID: 7449412222695476896}
   - component: {fileID: 7449412222695476897}
-  m_Layer: 0
+  - component: {fileID: 6813830773983674691}
+  m_Layer: 13
   m_Name: pCylinder9_shard8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1160,6 +1409,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &6813830773983674691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7449412222695476898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5103698b2d14bf44acf9accb287aa47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  variance: 1
+  lifeSpan: 5
 --- !u!1 &7489227751545761395
 GameObject:
   m_ObjectHideFlags: 0
@@ -1173,7 +1436,8 @@ GameObject:
   - component: {fileID: 1447291883204860207}
   - component: {fileID: 7489227751545761393}
   - component: {fileID: 7489227751545761394}
-  m_Layer: 0
+  - component: {fileID: 2454711231250804213}
+  m_Layer: 13
   m_Name: pCylinder9_shard7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1272,3 +1536,122 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2454711231250804213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7489227751545761395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5103698b2d14bf44acf9accb287aa47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  variance: 1
+  lifeSpan: 5
+--- !u!1001 &2443000260127107450
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2612801272328229983}
+    m_Modifications:
+    - target: {fileID: 663911514247025581, guid: d5e4a2afcc488b84cbc623b3a368662d,
+        type: 3}
+      propertyPath: m_Name
+      value: Loot
+      objectReference: {fileID: 0}
+    - target: {fileID: 663911514247025581, guid: d5e4a2afcc488b84cbc623b3a368662d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1227906056671094641, guid: d5e4a2afcc488b84cbc623b3a368662d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4570566318816403902, guid: d5e4a2afcc488b84cbc623b3a368662d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4570566318816403902, guid: d5e4a2afcc488b84cbc623b3a368662d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4570566318816403902, guid: d5e4a2afcc488b84cbc623b3a368662d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4570566318816403902, guid: d5e4a2afcc488b84cbc623b3a368662d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4570566318816403902, guid: d5e4a2afcc488b84cbc623b3a368662d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4570566318816403902, guid: d5e4a2afcc488b84cbc623b3a368662d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4570566318816403902, guid: d5e4a2afcc488b84cbc623b3a368662d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4570566318816403902, guid: d5e4a2afcc488b84cbc623b3a368662d,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4570566318816403902, guid: d5e4a2afcc488b84cbc623b3a368662d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4570566318816403902, guid: d5e4a2afcc488b84cbc623b3a368662d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4570566318816403902, guid: d5e4a2afcc488b84cbc623b3a368662d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4570566318816403902, guid: d5e4a2afcc488b84cbc623b3a368662d,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.33099964
+      objectReference: {fileID: 0}
+    - target: {fileID: 4570566318816403902, guid: d5e4a2afcc488b84cbc623b3a368662d,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.33099964
+      objectReference: {fileID: 0}
+    - target: {fileID: 4570566318816403902, guid: d5e4a2afcc488b84cbc623b3a368662d,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.33099964
+      objectReference: {fileID: 0}
+    - target: {fileID: 8797602752050170531, guid: d5e4a2afcc488b84cbc623b3a368662d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d5e4a2afcc488b84cbc623b3a368662d, type: 3}
+--- !u!4 &2200762763955570884 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4570566318816403902, guid: d5e4a2afcc488b84cbc623b3a368662d,
+    type: 3}
+  m_PrefabInstance: {fileID: 2443000260127107450}
+  m_PrefabAsset: {fileID: 0}

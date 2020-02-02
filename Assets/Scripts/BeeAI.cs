@@ -18,7 +18,10 @@ public class BeeAI : MonoBehaviour
 	// Update is called once per frame
 	void FixedUpdate()
 	{
-		transform.LookAt(manualTargets[randTar]);
+		if (manualTargets.Length > 0)
+			transform.LookAt(manualTargets[randTar]);
+		else
+			transform.LookAt(MCP.mcp.player.position);
 		tarTimer -= Time.deltaTime;
 		if(tarTimer <= 0)
 		{

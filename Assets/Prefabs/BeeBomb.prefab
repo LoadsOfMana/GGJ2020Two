@@ -125,6 +125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyAfter: 0
+  delay: 0
 --- !u!114 &4060564425894826832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,6 +138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5103698b2d14bf44acf9accb287aa47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  variance: 0
   lifeSpan: 5
 --- !u!82 &2862984605017781177
 AudioSource:

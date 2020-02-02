@@ -9,6 +9,8 @@ public class BreakPot : MonoBehaviour
 	private Vector3 speedVector;
 	private Vector3 lastFramePos;
 	public GameObject myBreakPot;
+	private bool broken = false;
+	public bool canBreakOnGround = false;
 	// Start is called before the first frame update
 	void Start()
     {
@@ -21,16 +23,28 @@ public class BreakPot : MonoBehaviour
 		speed = Vector3.Distance(transform.position, lastFramePos) / Time.deltaTime;
 		lastFramePos = transform.position;
 	}
+	[ContextMenu("break it")]
 	void BreakDaPot()
 	{
+		if (broken)
+			return;
+		broken = true;
+		transform.parent = null;
 		GameObject pot = Instantiate(myBreakPot, transform.position, transform.rotation);
 		pot.transform.localScale = transform.localScale;
 		if (itemPot)
-			pot.transform.Find("Loot").gameObject.SetActive(true);
+		{
+			pot.transform.Find("Loot").GetComponent<MeshRenderer>().enabled = true;
+			pot.transform.Find("Loot").GetComponent<MeshCollider>().enabled = true;
+			pot.transform.Find("Loot").parent = null;
+		}
+		Destroy(gameObject);
 	}
 	private void OnCollisionEnter(Collision collision)
 	{
-		if(speed > 2)
+		if (collision.collider.tag == "Workbench")
+			canBreakOnGround = true;
+		if(speed > 2 && canBreakOnGround)
 		{
 			BreakDaPot();
 		}

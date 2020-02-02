@@ -11,6 +11,8 @@ public class CakePuzzle : MonoBehaviour
 	public int firstNum = -1;
 	public Transform firstPointVis;
 	public GameObject cakeLineRender;
+	public GameObject splatCake;
+	private bool splatfix = false;
     private bool between (int low, int high, int x)
     {
         return (low < x && x < high);
@@ -38,6 +40,21 @@ public class CakePuzzle : MonoBehaviour
     {
         
     }
+	private void OnTriggerEnter(Collider other)
+	{
+		if (other.gameObject.tag == "Wrench")
+		{
+			if (other.gameObject.GetComponent<WrenchHead1>().speed > 2.5f)
+			{
+				if (splatfix)
+					return;
+				splatfix = true;
+				Instantiate(splatCake, transform.position, transform.rotation);
+				Destroy(gameObject);
+			}
+
+		}
+	}
 	void ResetTheBois()
 	{
 		foreach(CakeTrigger boi in theBois)

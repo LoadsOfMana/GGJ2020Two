@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MustClear : MonoBehaviour
 {
+	public float addScore;
     // Start is called before the first frame update
     void Start()
     {

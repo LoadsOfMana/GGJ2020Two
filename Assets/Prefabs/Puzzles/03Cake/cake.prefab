@@ -155,6 +155,8 @@ MonoBehaviour:
   firstPointVis: {fileID: 0}
   cakeLineRender: {fileID: 5807135578706363635, guid: 7155e7709c8a112499ff091362969e04,
     type: 3}
+  splatCake: {fileID: 7484422427148501091, guid: e3cc6c94ccfc19d4e85d23cc7821d598,
+    type: 3}
 --- !u!114 &58488510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,6 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 757eabbde66e9b345ac80deaaabc18af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  addScore: 0
 --- !u!1 &8628427686736582725
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class Lifespan : MonoBehaviour
 {
+	public float variance = 0;
 	public float lifeSpan = 3f;
     // Start is called before the first frame update
     void Start()
     {
-		Destroy(gameObject, lifeSpan);
+		Destroy(gameObject, lifeSpan + Random.Range(-variance,variance));
     }
 
     // Update is called once per frame
