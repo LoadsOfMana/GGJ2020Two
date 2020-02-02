@@ -5,6 +5,7 @@ using UnityEngine;
 public class SpiderScript : MonoBehaviour
 {
     public float SpawnTime;
+    public GameController Game;
 
     // Start is called before the first frame update
     void Start()
@@ -45,6 +46,7 @@ public class SpiderScript : MonoBehaviour
             {
                 collider.gameObject.transform.parent.gameObject.GetComponent<AudioSource>().Play();
                 Destroy(gameObject);
+                Game.BugKilled();
             }
         }
         

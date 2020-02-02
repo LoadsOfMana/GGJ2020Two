@@ -5,6 +5,7 @@ using UnityEngine;
 public class HammerCollisionHandler : MonoBehaviour
 {
     public GameObject SpiderPrefab;
+    public GameController Game;
 
     // Start is called before the first frame update
     void Start()
@@ -23,8 +24,11 @@ public class HammerCollisionHandler : MonoBehaviour
     {
         var name = c.gameObject.name;
 
-        if (name.StartsWith("generator"))
+        if (name.StartsWith("machine"))
         {
+            if (Game.BugCount <= 0) {
+                return;
+            }
             Debug.Log(c);
             var newSpider = Instantiate(SpiderPrefab);
 

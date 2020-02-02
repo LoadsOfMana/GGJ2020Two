@@ -14,8 +14,8 @@ public class HandScript : MonoBehaviour
     void Update()
     {
         OVRInput.Update();
-        var p = OVRInput.GetLocalControllerPosition(OVRInput.Controller.LHand);
-        var r = OVRInput.GetLocalControllerRotation(OVRInput.Controller.LHand);
+        var p = OVRInput.GetLocalControllerPosition(OVRInput.Controller.RHand);
+        var r = OVRInput.GetLocalControllerRotation(OVRInput.Controller.RHand);
         //Debug.Log(p);
         transform.position = p;
         transform.rotation = r;
